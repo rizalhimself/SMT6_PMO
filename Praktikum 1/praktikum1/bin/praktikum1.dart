@@ -20,8 +20,8 @@ void main() {
   void hitungTotalBelanja() {
     int a = 0;
     for (int i = 0; i < arrTotal.length; i++) {
-      arrTotal[i][1] + a;
-      jumlah = a;
+      a = (arrTotal[i][1]);
+      jumlah = jumlah + a;
     }
   }
 
