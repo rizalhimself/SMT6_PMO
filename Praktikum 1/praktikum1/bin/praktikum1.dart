@@ -38,8 +38,23 @@ void main() {
           (arrTotal[i][1]).toString());
     }
     hitungTotalBelanja();
-    print('Total belanja anda adalah Rp ' +
-        jumlah.toString() /*Disini total belanja*/);
+  }
+
+  void pembayaran() {
+    print('===================');
+    print(' Metode Pembayaran ');
+    print('===================');
+    print('No.\tCara Pembayaran');
+    print('1.\tTunai');
+    print('2.\tKredit');
+    print('Silahkan masukkan nomor pilihan cara pembayaran anda?');
+    pilihan = stdin.readLineSync().toString();
+    if (pilihan == '1') {
+      totalHarga = (10 ~/ 100) * jumlah;
+      print('Jumlah yang harus dibayarkan adalah Rp' + totalHarga.toString());
+      print('Masukkan jumlah pembayaran:');
+      totalBayar = stdin.readLineSync() as int;
+    }
   }
 
   void pilihBarang() {
@@ -61,6 +76,17 @@ void main() {
       masukkanKedalamArray();
     } while (pilihan != 'sudah');
     keranjang();
+    print('Total belanja anda adalah Rp ' +
+        jumlah.toString() /*Disini total belanja*/);
+    print(
+        'Apakah anda akan melanjutkan ke pembayaran?(Ketik ya untuk melanjutkan ke pembayaran atau ketik tidak untuk melanjutkan memilih barang.');
+    pilihan = stdin.readLineSync().toString();
+    if (pilihan == 'ya') {
+      //Disini fungsi pembayaram
+      pembayaran();
+    } else if (pilihan == 'tidak') {
+      return (pilihBarang());
+    }
   }
 
   print('===================');
