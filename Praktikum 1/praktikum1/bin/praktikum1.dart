@@ -2,7 +2,7 @@ import 'dart:io';
 
 void main() {
   String caraBeli, pilihan = '0';
-  int jmlBarang, hargaBarang, totalHarga, totalBayar, diskon, jumlah = 0;
+  int jmlBarang, kembalian, totalHarga, totalBayar, kurangan, jumlah = 0;
   List arrTotal = [];
   List arrBarang = [
     ['Laptop', 2000000],
@@ -50,10 +50,18 @@ void main() {
     print('Silahkan masukkan nomor pilihan cara pembayaran anda?');
     pilihan = stdin.readLineSync().toString();
     if (pilihan == '1') {
-      totalHarga = (10 ~/ 100) * jumlah;
+      totalHarga = jumlah - ((10 * jumlah) ~/ 100);
       print('Jumlah yang harus dibayarkan adalah Rp' + totalHarga.toString());
       print('Masukkan jumlah pembayaran:');
-      totalBayar = stdin.readLineSync() as int;
+      totalBayar = int.parse(stdin.readLineSync() ?? '');
+      kembalian = totalBayar - totalHarga;
+      if (kembalian == 0 || kembalian > 0) {
+        print('Pembayaran Sukses!');
+        print('Kembalian = Rp ' + kembalian.toString());
+      } else if (kembalian < 0) {
+        kurangan = kembalian.abs();
+        print('Mohon maaf pembayaran anda kurang Rp ' + kurangan.toString());
+      }
     }
   }
 
