@@ -2,6 +2,7 @@
 
 import 'dart:io';
 import 'package:flutter/material.dart';
+import 'package:praktikum5/Widget/Agama.dart';
 import 'package:praktikum5/Widget/Bahasa.dart';
 import 'package:praktikum5/Widget/Pemisah.dart';
 
@@ -55,6 +56,7 @@ class _HomeState extends State<Home> {
                 Text("Jenis Kelamin : " + jenisKelaminDipilih),
                 Text("Status : " + statusPernikahanDipilih),
                 Text("Kemampuan Berbahasa : " + cariBahasa()),
+                Text("Agama : " + agamaDipilih)
               ],
             )
           ],
@@ -92,6 +94,8 @@ class _HomeState extends State<Home> {
                   StatusPernikahan(),
                   Pemisah(),
                   Bahasa(),
+                  Pemisah(),
+                  Agama(),
                   Pemisah(),
                   ElevatedButton(
                       onPressed: () {
