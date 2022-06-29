@@ -42,21 +42,13 @@ class _HomeState extends State<Home> {
     AlertDialog alertDialog = AlertDialog(
       content: Container(
         width: 100.0,
-        height: 200.0,
+        height: 350.0,
         child: ListView(
           children: [
             Column(
               mainAxisAlignment: MainAxisAlignment.start,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Align(
-                  alignment: Alignment.topCenter,
-                  child: ElevatedButton(
-                      onPressed: () {
-                        Navigator.pop(context);
-                      },
-                      child: const Text("OK")),
-                ),
                 Text("Nama Lengkap : " + controllerNama.text),
                 Text("Alamat : " + controllerAlamat.text),
                 Text("Tempat Lahr : " + controllerTempatLahir.text),
@@ -65,10 +57,20 @@ class _HomeState extends State<Home> {
                 Text("Agama : " + agamaDipilih),
                 Text("Kemampuan Berbahasa : " + cariBahasa()),
               ],
-            )
+            ),
           ],
         ),
       ),
+      actions: [
+        Align(
+          alignment: Alignment.bottomCenter,
+          child: ElevatedButton(
+              onPressed: () {
+                Navigator.pop(context);
+              },
+              child: const Text("OK")),
+        ),
+      ],
     );
 
     showDialog(
@@ -123,11 +125,11 @@ class _HomeState extends State<Home> {
                   Pemisah(),
                   JenisKelamin(),
                   Pemisah(),
+                  Agama(),
+                  Pemisah(),
                   StatusPernikahan(),
                   Pemisah(),
                   Bahasa(),
-                  Pemisah(),
-                  Agama(),
                   Pemisah(),
                   ElevatedButton(
                       onPressed: () {
