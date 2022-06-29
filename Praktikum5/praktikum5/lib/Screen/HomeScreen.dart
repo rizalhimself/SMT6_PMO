@@ -88,21 +88,9 @@ class _HomeState extends State<Home> {
               child: Column(
                 children: [
                   JenisKelamin(),
-                  const Divider(
-                    height: 0,
-                    thickness: 1,
-                    indent: 0,
-                    endIndent: 0,
-                    color: Colors.black,
-                  ),
+                  Pemisah(),
                   StatusPernikahan(),
-                  const Divider(
-                    height: 0,
-                    thickness: 1,
-                    indent: 0,
-                    endIndent: 0,
-                    color: Colors.black,
-                  ),
+                  Pemisah(),
                   Bahasa(),
                   Pemisah(),
                   ElevatedButton(
