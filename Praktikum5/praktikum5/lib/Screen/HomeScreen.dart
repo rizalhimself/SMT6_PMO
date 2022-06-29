@@ -5,7 +5,6 @@ import 'package:flutter/material.dart';
 import 'package:praktikum5/Widget/Agama.dart';
 import 'package:praktikum5/Widget/Bahasa.dart';
 import 'package:praktikum5/Widget/Pemisah.dart';
-
 import '../Widget/JenisKelamin.dart';
 import '../Widget/StatusPernikahan.dart';
 
